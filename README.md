@@ -76,7 +76,7 @@ This looks wrong. Here is a table that compares the expected significant positio
 | [10, 100[     | 2        | 1                                | 2                     |
 | [100, 1000[   | 3        | 2                                | 3                     |
 
-The original expression returns a result 1 too small, for numbers >= 1. It would be reasonable to guess that the conditional increase is intending to fix this by adding 1. As the last column shows, it instead only makes things worse. Instead, it likely should be fixed as follows:
+The original expression returns a result 1 too small, for numbers >= 1. It would be reasonable to guess that the conditional increase is intending to fix this by adding 1. As the last column shows, it doesn't fix the interval [1, 10[. Instead, it likely should be fixed as follows:
 ```
 $significantPosition = ((int) log( abs($x), 10)) % 10;
 if ($x >= 1) {
