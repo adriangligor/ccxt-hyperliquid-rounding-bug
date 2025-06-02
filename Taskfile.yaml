@@ -1,0 +1,19 @@
+# https://taskfile.dev
+version: 3
+
+tasks:
+  run:
+    desc: executes the playground
+    cmds:
+      - php src/playground.php
+
+  vim:
+    desc: opens the playground in vim
+    cmds:
+      - vim src/playground.php src/hyperliquid_patched.php
+
+  default:
+    cmds:
+      - task -l
+    silent: true
+
